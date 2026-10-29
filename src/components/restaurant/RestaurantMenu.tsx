@@ -74,7 +74,6 @@ export function RestaurantMenu() {
                   type="button"
                   onClick={() => open(p.page)}
                   className="group block w-full text-left"
-                  aria-label={`View printed menu page ${p.page}: ${p.sections.join(", ")}`}
                 >
                   <span className="relative block aspect-[3/4] overflow-hidden border border-forest-900/15 bg-sand-200">
                     <Image
@@ -87,6 +86,7 @@ export function RestaurantMenu() {
                   </span>
                   <span className="mt-2 block text-sm font-semibold text-forest-950">Page {p.page}</span>
                   <span className="block text-xs leading-snug text-ink-soft">{p.sections.join(" · ")}</span>
+                  <span className="sr-only"> (opens the page viewer)</span>
                 </button>
               </li>
             ))}
@@ -116,11 +116,11 @@ export function RestaurantMenu() {
                 <span className="hidden text-ink-soft sm:inline"> · {current.sections.join(", ")}</span>
               </p>
               <div className="flex shrink-0 items-center gap-2">
-                <button type="button" onClick={() => go(-1)} className="h-10 border border-forest-900/30 px-3 text-sm font-semibold" aria-label="Previous page">
-                  ‹ Prev
+                <button type="button" onClick={() => go(-1)} className="h-10 border border-forest-900/30 px-3 text-sm font-semibold" >
+                  <span aria-hidden="true">‹ </span>Prev<span className="sr-only">ious page</span>
                 </button>
-                <button type="button" onClick={() => go(1)} className="h-10 border border-forest-900/30 px-3 text-sm font-semibold" aria-label="Next page">
-                  Next ›
+                <button type="button" onClick={() => go(1)} className="h-10 border border-forest-900/30 px-3 text-sm font-semibold" >
+                  Next<span className="sr-only"> page</span><span aria-hidden="true"> ›</span>
                 </button>
                 <button
                   type="button"
@@ -135,7 +135,13 @@ export function RestaurantMenu() {
                 </button>
               </div>
             </div>
-            <div className="min-h-0 flex-1 overflow-auto bg-sand-200">
+            {/* Scrollable when zoomed: focusable so keyboard users can scroll it with the arrow keys. */}
+            <div
+              tabIndex={0}
+              role="region"
+              aria-label={`Printed menu page ${current.page}, scrollable`}
+              className="min-h-0 flex-1 overflow-auto bg-sand-200"
+            >
               <Image
                 key={current.page}
                 src={current.src}

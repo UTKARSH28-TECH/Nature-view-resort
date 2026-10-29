@@ -22,6 +22,10 @@ export const SITE = {
   },
 } as const;
 
+export const HOME_TITLE = "Nature View Resort, Khandoli, Giridih | Rooms, Restaurant & Events";
+export const HOME_DESCRIPTION =
+  "Nature View Resort and Family Restaurant near Khandoli Dam, Giridih, Jharkhand. Send a room enquiry, view the restaurant menu or plan a celebration.";
+
 const addressOneLine = `${SITE.address.lines.join(", ")} ${SITE.address.postalCode}, ${SITE.address.country}`;
 
 export const whatsappWith = (message: string) => `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -48,6 +52,7 @@ export const ROUTES = {
   contact: "/contact",
   book: "/book",
   eventEnquiry: "/events/enquiry",
+  privacy: "/privacy",
 } as const;
 
 /** Pages whose first screen is a full-bleed photo, so the header starts transparent. Add new hero pages here. */

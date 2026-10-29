@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Field, Honeypot, borderFor, inputClass } from "@/components/forms/Field";
 import { OutcomePanel } from "@/components/forms/OutcomePanel";
@@ -19,6 +20,7 @@ import {
   type RoomEnquiryErrors,
   type RoomEnquiryField,
 } from "@/lib/room-enquiry";
+import { ROUTES } from "@/lib/site";
 
 type Draft = {
   room: string;
@@ -287,7 +289,7 @@ export function RoomEnquiryForm({ initialRoom = "" }: { initialRoom?: string }) 
           </Field>
         </div>
 
-        <Field id="room-requests" label="Special requests" hint="Anything that will help the resort plan your stay." error={errors.requests}>
+        <Field id="room-requests" label="Special requests" hint="Anything that will help the resort plan your stay. Please don't include payment card, ID or health details." error={errors.requests}>
           <textarea
             id="room-requests"
             name="requests"
@@ -308,7 +310,8 @@ export function RoomEnquiryForm({ initialRoom = "" }: { initialRoom?: string }) 
         <p className="text-sm leading-relaxed text-ink-soft">
           <strong className="text-forest-950">This is an enquiry, not a booking.</strong> Sending it does not guarantee
           that a room is available or confirm a reservation. The resort will contact you to check availability and
-          discuss any pricing.
+          discuss any pricing. We use these details only to reply to your enquiry; see the{" "}
+          <Link href={ROUTES.privacy} className="underline decoration-clay-600 underline-offset-4">privacy notice</Link>.
         </p>
         <button
           type="submit"

@@ -3,13 +3,15 @@ import Link from "next/link";
 import { EventEnquiryForm } from "@/components/events/EventEnquiryForm";
 import { EVENT_TYPES, VENUE_PREFERENCES } from "@/lib/enquiries";
 import { LINKS, ROUTES, SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Event Enquiry",
   description:
     "Send an event enquiry to Nature View Resort, Khandoli, Giridih: wedding, birthday, anniversary, family celebration, kitty party or corporate meeting.",
-  alternates: { canonical: ROUTES.eventEnquiry },
-};
+  path: ROUTES.eventEnquiry,
+  image: "events",
+});
 
 const first = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? "";
 

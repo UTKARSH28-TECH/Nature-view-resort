@@ -55,6 +55,33 @@ describe("real postgres.js driver and scripts against an in-memory Postgres serv
     expect(out.stdout).toContain("No enquiries found.");
   });
 
+  it("staff purge is a dry run by default and only deletes with --yes", async () => {
+    const insert = (ref: string, status: string, age: string) =>
+      pg.exec(
+        `INSERT INTO enquiries (reference, fingerprint, kind, status, guest_name, phone, email, payload, created_at)
+         VALUES ('${ref}', 'fp-${ref}', 'room', '${status}', 'Old Guest', '9876500000', 'old@example.com', '{}', now() - interval '${age}')`,
+      );
+    await insert("OLD-CLOSED", "closed", "14 months");
+    await insert("OLD-NEW", "new", "14 months");
+    await insert("RECENT", "closed", "2 days");
+    const count = async () => Number(((await pg.query("SELECT count(*)::int AS n FROM enquiries")).rows[0] as { n: number }).n);
+
+    expect(await count()).toBe(3);
+    const dry = await script("enquiries-admin.mjs", "purge", "--older-than-months", "12", "--status", "closed");
+    expect(dry.stdout).toContain("Dry run: 1 enquiry(ies)");
+    expect(await count()).toBe(3); // nothing deleted without --yes
+
+    const bad = await script("enquiries-admin.mjs", "purge").catch((e) => e);
+    expect(bad.stderr).toContain("Usage: purge");
+    expect(await count()).toBe(3);
+
+    const real = await script("enquiries-admin.mjs", "purge", "--older-than-months", "12", "--status", "closed", "--yes");
+    expect(real.stdout).toContain("Deleted 1 enquiry(ies)");
+    const left = (await pg.query("SELECT reference FROM enquiries ORDER BY reference")).rows.map((r) => (r as { reference: string }).reference);
+    expect(left).toEqual(["OLD-NEW", "RECENT"]);
+    await pg.exec("TRUNCATE enquiries");
+  });
+
   it("the production store works through the real driver (getStoreFromEnv)", async () => {
     const store = getStoreFromEnv({ DATABASE_URL: URL });
     expect(store).not.toBeNull();

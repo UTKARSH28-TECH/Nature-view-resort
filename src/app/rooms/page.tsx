@@ -5,13 +5,15 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { RoomCard } from "@/components/rooms/RoomCard";
 import { ROOM_LIST, ROOM_PHOTO_NOTE } from "@/lib/rooms";
 import { LINKS, ROUTES, SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Rooms & Suites",
+export const metadata: Metadata = pageMetadata({
+  title: "Rooms & Suites near Khandoli Dam, Giridih",
   description:
-    "Three room categories at Nature View Resort near Khandoli Dam, Giridih: Deluxe Room with Lake View, Deluxe Twin Room with Balcony, Hill and Lake View, and Executive Suite with Private Balcony.",
-  alternates: { canonical: ROUTES.rooms },
-};
+    "Three room categories at Nature View Resort near Khandoli Dam, Giridih: a Deluxe Room, a Deluxe Twin Room and an Executive Suite. Send a booking enquiry.",
+  path: ROUTES.rooms,
+  image: "rooms",
+});
 
 const STEPS = [
   { title: "Choose a room", text: "Pick the category you prefer and open its enquiry form." },

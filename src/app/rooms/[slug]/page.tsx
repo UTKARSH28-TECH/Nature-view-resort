@@ -7,6 +7,8 @@ import { Photo } from "@/components/Photo";
 import { RoomGallery } from "@/components/rooms/RoomGallery";
 import { ROOM_LIST, ROOM_PHOTO_NOTE, bookRoomHref, getRoom, roomHref } from "@/lib/rooms";
 import { LINKS, ROUTES, SITE } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -19,12 +21,7 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const room = getRoom((await params).slug);
   if (!room) return {};
-  return {
-    title: room.name,
-    description: room.metaDescription,
-    alternates: { canonical: roomHref(room.slug) },
-    openGraph: { title: room.name, description: room.metaDescription, images: [{ url: room.gallery[0].src }] },
-  };
+  return pageMetadata({ title: room.name, description: room.metaDescription, path: roomHref(room.slug), image: room.slug });
 }
 
 export default async function RoomPage({ params }: { params: Promise<Params> }) {
@@ -35,6 +32,13 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: ROUTES.home },
+          { name: "Rooms", path: ROUTES.rooms },
+          { name: room.name, path: roomHref(room.slug) },
+        ])}
+      />
       <PageHero eyebrow="Rooms & Suites" title={room.name} image={hero.src} alt={hero.alt}>
         {room.intro}
       </PageHero>

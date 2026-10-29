@@ -6,13 +6,16 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { RestaurantMenu } from "@/components/restaurant/RestaurantMenu";
 import { MENU, MENU_ITEM_COUNT, categoryById, findItem, lowestPrice, rupees } from "@/data/menu";
 import { LINKS, ROUTES, SITE, whatsappWith } from "@/lib/site";
+import { pageMetadata, restaurantJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 
-export const metadata: Metadata = {
-  title: "Restaurant & Menu",
+export const metadata: Metadata = pageMetadata({
+  title: "Family Restaurant & Menu, Khandoli, Giridih",
   description:
     "Nature View Family Restaurant at Nature View Resort near Khandoli Dam, Giridih. Browse the vegetarian and non-vegetarian menu with prices, or call to ask about group dining.",
-  alternates: { canonical: ROUTES.restaurant },
-};
+  path: ROUTES.restaurant,
+  image: "restaurant",
+});
 
 const SETTING = [
   {
@@ -41,6 +44,7 @@ export default function RestaurantPage() {
 
   return (
     <>
+      <JsonLd data={restaurantJsonLd()} />
       <PageHero
         eyebrow="Family Restaurant"
         title="Dine at Nature View Family Restaurant"

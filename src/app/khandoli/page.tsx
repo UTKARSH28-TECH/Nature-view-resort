@@ -5,13 +5,15 @@ import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature } from "@/components/khandoli/Feature";
 import { LINKS, ROUTES, SITE, whatsappWith } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Discover Khandoli",
+export const metadata: Metadata = pageMetadata({
+  title: "Discover Khandoli, Giridih",
   description:
     "Khandoli in Giridih district, Jharkhand: the dam and reservoir, hills and park, and seasonal birdwatching. Stay near Khandoli Dam at Nature View Resort.",
-  alternates: { canonical: ROUTES.khandoli },
-};
+  path: ROUTES.khandoli,
+  image: "khandoli",
+});
 
 export default function KhandoliPage() {
   return (

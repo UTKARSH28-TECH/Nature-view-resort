@@ -3,13 +3,15 @@ import { Button } from "@/components/Button";
 import { GalleryExplorer } from "@/components/gallery/GalleryExplorer";
 import { LINKS, ROUTES, SITE } from "@/lib/site";
 import { GALLERY } from "@/data/gallery";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Photo Gallery",
   description:
     "Photographs of Nature View Resort near Khandoli Dam, Giridih: the resort and grounds, rooms and suites, the restaurant, events and the Khandoli landscape.",
-  alternates: { canonical: ROUTES.gallery },
-};
+  path: ROUTES.gallery,
+  image: "gallery",
+});
 
 export default function GalleryPage() {
   return (

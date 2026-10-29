@@ -7,13 +7,15 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { OccasionSection } from "@/components/events/OccasionSection";
 import { OCCASIONS, PLANNING_CHECKLIST, SPACES, enquiryHref } from "@/lib/events";
 import { LINKS, ROUTES, SITE, whatsappWith } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Weddings, Celebrations & Events",
+export const metadata: Metadata = pageMetadata({
+  title: "Weddings, Celebrations & Events in Giridih",
   description:
     "Plan a wedding, birthday, anniversary, family celebration, kitty party or corporate meeting at Nature View Resort near Khandoli Dam, Giridih. Send an event enquiry.",
-  alternates: { canonical: ROUTES.events },
-};
+  path: ROUTES.events,
+  image: "events",
+});
 
 const MORE = [
   {

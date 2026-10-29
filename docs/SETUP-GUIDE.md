@@ -1,5 +1,7 @@
 # Setup guide: email and enquiry storage
 
+> Deploying to Vercel? Read **`DEPLOYMENT.md`** too: it lists the exact order of steps, the environment variables (including `NEXT_PUBLIC_SITE_URL`) and the launch checks. Data access and security: `SECURITY.md`. Privacy decisions: `PRIVACY-TO-CONFIRM.md`.
+
 Everything below is done **by you (the owner or whoever manages the accounts)**. None of it can be done from the code. Until it is done the website still builds and runs, but:
 
 | Feature | Before setup | After setup |

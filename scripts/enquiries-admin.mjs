@@ -6,6 +6,8 @@
 //   npm run enquiries -- unsent            saved enquiries whose notification email did not go out
 //   npm run enquiries -- show NVR-261029-K7QD2
 //   npm run enquiries -- mark NVR-261029-K7QD2 contacted    (new | contacted | closed)
+//   npm run enquiries -- purge --older-than-months 12 [--status closed]      dry run: shows how many would be deleted
+//   npm run enquiries -- purge --older-than-months 12 [--status closed] --yes  actually deletes them (cannot be undone)
 import postgres from "postgres";
 
 const url = process.env.DATABASE_URL?.trim();
@@ -57,8 +59,30 @@ try {
       const res = await sql`UPDATE enquiries SET status = ${status}, updated_at = now() WHERE reference = ${ref} RETURNING reference`;
       console.log(res.length ? `${ref} marked ${status}.` : "Not found.");
     }
+  } else if (cmd === "purge") {
+    // Retention tool. The retention period is a management decision (see docs/PRIVACY-TO-CONFIRM.md); nothing runs automatically.
+    const months = parseInt(flag("older-than-months", ""), 10);
+    const status = flag("status", null);
+    if (!Number.isInteger(months) || months < 1 || (status && !["new", "contacted", "closed"].includes(status))) {
+      console.error("Usage: purge --older-than-months <N> [--status new|contacted|closed] [--yes]");
+      process.exitCode = 1;
+    } else {
+      const rows = await sql`
+        SELECT reference FROM enquiries
+        WHERE created_at < now() - (${months}::int * interval '1 month')
+          AND (${status}::text IS NULL OR status = ${status})`;
+      if (!args.includes("--yes")) {
+        console.log(`Dry run: ${rows.length} enquiry(ies) older than ${months} month(s)${status ? ` with status "${status}"` : ""} would be deleted. Add --yes to delete them.`);
+      } else if (rows.length === 0) {
+        console.log("Nothing to delete.");
+      } else {
+        const refs = rows.map((r) => r.reference);
+        await sql`DELETE FROM enquiries WHERE reference = ANY(${sql.array(refs)})`;
+        console.log(`Deleted ${refs.length} enquiry(ies).`);
+      }
+    }
   } else {
-    console.error("Unknown command. Use: list | unsent | show <ref> | mark <ref> <status>");
+    console.error("Unknown command. Use: list | unsent | show <ref> | mark <ref> <status> | purge --older-than-months <N>");
     process.exitCode = 1;
   }
 } catch (err) {

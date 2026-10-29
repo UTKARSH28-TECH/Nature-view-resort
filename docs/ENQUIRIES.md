@@ -45,7 +45,7 @@ All in `src/config/enquiry-limits.ts`, overridable by environment variables (tab
 
 ## Testing
 
-`npm test` (Vitest, 107 tests, ~7 s). No real email is sent and no real customer record is created:
+`npm test` (Vitest, 121 tests including SEO checks). No real email is sent and no real customer record is created:
 - validation for room and event enquiries (dates, unknown slugs, injection, limits);
 - the service with a mock mailer: success, honeypot, origin, size, content type, rate limit, escaping, header injection, missing credentials, provider rejection/timeout/network error, exceptions, no personal data in logs, duplicate handling;
 - **the real migration SQL and store queries on an in-memory PostgreSQL (PGlite)**, plus the real `postgres` driver and the migrate and staff scripts against an in-memory PostgreSQL server;

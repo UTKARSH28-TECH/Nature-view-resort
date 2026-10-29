@@ -1,5 +1,5 @@
 export const inputClass =
-  "block h-12 w-full border bg-white px-3.5 text-base text-ink placeholder:text-ink-soft/60 disabled:opacity-60";
+  "block h-12 w-full border bg-white px-3.5 text-base text-ink placeholder:text-ink-soft disabled:opacity-60";
 
 export const borderFor = (invalid: boolean) => (invalid ? "border-clay-700" : "border-forest-900/30");
 

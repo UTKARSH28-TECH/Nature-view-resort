@@ -71,13 +71,16 @@ export function createEnquiryStore(db: Db): EnquiryStore {
 
     async insert(e) {
       const v = e.payload.value;
+      // Data minimisation: contact details live in their own columns only, not duplicated inside the JSON.
+      const { name: _n, phone: _p, email: _e, ...details } = v;
+      void _n; void _p; void _e;
       try {
         const r = await db.query(
           `INSERT INTO enquiries (reference, submission_id, fingerprint, kind, guest_name, phone, email, payload)
            VALUES ($1, $2, $3, $4, $5, $6, $7, $8::jsonb)
            ON CONFLICT DO NOTHING
            RETURNING reference`,
-          [e.reference, e.submissionId, e.fingerprint, e.payload.kind, v.name, v.phone, v.email, JSON.stringify(v)],
+          [e.reference, e.submissionId, e.fingerprint, e.payload.kind, v.name, v.phone, v.email, JSON.stringify(details)],
         );
         return r.rows.length === 1 ? { ok: true } : { ok: false, reason: "conflict" };
       } catch {

@@ -58,7 +58,7 @@ export function MenuExplorer({ onShowPrinted }: { onShowPrinted?: (page: number)
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search dishes, e.g. paneer, noodles, soup"
             autoComplete="off"
-            className="h-12 w-full border border-forest-900/25 bg-white pl-10 pr-4 text-base text-ink placeholder:text-ink-soft/70"
+            className="h-12 w-full border border-forest-900/25 bg-white pl-10 pr-4 text-base text-ink placeholder:text-ink-soft"
           />
         </div>
       </div>

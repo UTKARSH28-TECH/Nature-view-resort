@@ -28,7 +28,7 @@ export function RoomGallery({ photos, roomName }: { photos: RoomPhoto[]; roomNam
         ))}
       </div>
       <p className="mt-3 text-sm text-ink-soft" aria-live="polite">
-        {current.caption} <span className="text-ink-soft/70">· {active + 1} of {photos.length}</span>
+        {current.caption} <span className="text-ink-soft">· {active + 1} of {photos.length}</span>
       </p>
 
       <ul className="mt-4 grid grid-cols-4 gap-3" aria-label={`${roomName} photographs`}>

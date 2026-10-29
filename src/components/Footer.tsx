@@ -66,6 +66,8 @@ export function Footer() {
         </div>
 
         <p className="mt-14 border-t border-white/15 pt-6 text-xs text-sand-200">
+          <Link href={ROUTES.privacy} className="underline underline-offset-4 hover:text-white">Privacy notice</Link>
+          <span aria-hidden="true"> · </span>
           © {new Date().getFullYear()} {SITE.name}. Submitting an enquiry does not confirm a reservation; the resort
           will contact you to check availability.
         </p>

@@ -54,6 +54,14 @@ describe("enquiries table (real migration SQL on in-memory Postgres)", () => {
     expect(row.id).toMatch(/^[0-9a-f-]{36}$/);
   });
 
+  it("does not duplicate contact details inside the JSON payload (data minimisation)", async () => {
+    await createEnquiryStore(t.db).insert(record());
+    const [row] = await t.rows();
+    const payload = row.payload as Record<string, unknown>;
+    for (const key of ["name", "phone", "email"]) expect(payload).not.toHaveProperty(key);
+    expect(row).toMatchObject({ guest_name: "Asha Verma", phone: "9876543210", email: "asha@example.com" });
+  });
+
   it("stores an event enquiry", async () => {
     const store = createEnquiryStore(t.db);
     await store.insert(record({ payload: eventPayload(), reference: "NVR-261029-BBBBB", submissionId: null }));

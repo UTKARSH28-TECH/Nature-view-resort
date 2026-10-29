@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { LINKS, ROUTES, SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact & Directions",
+export const metadata: Metadata = pageMetadata({
+  title: "Contact & Directions, Khandoli, Giridih",
   description:
     "Contact Nature View Resort near Khandoli Dam, Sonbad Road, Giridih, Jharkhand 815302. Call, WhatsApp or email, get directions, or send a room or event enquiry.",
-  alternates: { canonical: ROUTES.contact },
-};
+  path: ROUTES.contact,
+});
 
 export default function ContactPage() {
   return (

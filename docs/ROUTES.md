@@ -11,6 +11,7 @@ structure is final; they show the friendly not-found page until their phase is b
 | `/experiences` redirects to `/gallery#resort` (Phase 6); the nav item is now "Gallery" | 6 |
 | `/khandoli`, `/gallery` (built in Phase 6) | 6 |
 | `/book` (accepts `?room=<slug>`), `/contact` (built in Phase 7) | 7 |
+| `/privacy` (Phase 8) | 8 |
 
 Contact details, nav and room names live in `src/lib/site.ts`.
 Photos awaiting consent (not copied to `public/`): `experiences/kitty party.png`, `experiences/winter -1.png`.

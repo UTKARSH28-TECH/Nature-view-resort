@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Field, Honeypot, borderFor, inputClass } from "@/components/forms/Field";
 import { OutcomePanel } from "@/components/forms/OutcomePanel";
@@ -18,6 +19,7 @@ import {
   type EventEnquiryErrors,
   type EventEnquiryField,
 } from "@/lib/enquiries";
+import { ROUTES } from "@/lib/site";
 
 type Draft = {
   name: string;
@@ -294,7 +296,7 @@ export function EventEnquiryForm({ initialType = "", initialSpace = "" }: { init
         <Field
           id="event-requirements"
           label="Catering, decoration and other requirements"
-          hint="Tell us anything that will help us plan, such as food, decoration, timing or accommodation for guests."
+          hint="Tell us anything that will help us plan, such as food, decoration, timing or accommodation for guests. Please don't include payment card, ID or health details."
           error={errors.requirements}
         >
           <textarea
@@ -316,7 +318,8 @@ export function EventEnquiryForm({ initialType = "", initialSpace = "" }: { init
       <div className="border-t border-forest-900/15 pt-6">
         <p className="text-sm leading-relaxed text-ink-soft">
           Sending an enquiry does not guarantee availability or confirm a booking. The resort will contact you to
-          discuss your event.
+          discuss your event. We use these details only to reply to your enquiry; see the{" "}
+          <Link href={ROUTES.privacy} className="underline decoration-clay-600 underline-offset-4">privacy notice</Link>.
         </p>
         <button
           type="submit"

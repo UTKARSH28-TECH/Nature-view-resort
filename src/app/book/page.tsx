@@ -4,13 +4,15 @@ import { RoomEnquiryForm } from "@/components/book/RoomEnquiryForm";
 import { ROOM_LIST } from "@/lib/rooms";
 import { roomFromQuery } from "@/lib/room-enquiry";
 import { LINKS, ROUTES, SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Room Booking Enquiry",
   description:
-    "Send a room enquiry to Nature View Resort near Khandoli Dam, Giridih: Deluxe Room with Lake View, Deluxe Twin Room with Balcony, Hill and Lake View, or Executive Suite with Private Balcony.",
-  alternates: { canonical: ROUTES.book },
-};
+    "Send a room enquiry to Nature View Resort near Khandoli Dam, Giridih. The resort will contact you to check availability; an enquiry does not confirm a booking.",
+  path: ROUTES.book,
+  image: "rooms",
+});
 
 const first = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
