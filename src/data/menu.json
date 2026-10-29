@@ -1,0 +1,1615 @@
+{
+  "categories": [
+    {
+      "id": "non-veg-starter",
+      "title": "NON VEG STARTER",
+      "page": 1,
+      "items": [
+        {
+          "name": "Chicken Cutlet",
+          "prices": [
+            275
+          ]
+        },
+        {
+          "name": "Chicken Pakora (Bone/Boneless)",
+          "prices": [
+            295
+          ]
+        },
+        {
+          "name": "Chicken Lolipop ( 6pcs)",
+          "prices": [
+            330
+          ]
+        },
+        {
+          "name": "Chicken 65 (8pcs)",
+          "prices": [
+            299
+          ]
+        },
+        {
+          "name": "Chicken Spring Roll",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Chicken Drumsticks (6pcs)",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Chicken Chatpata",
+          "prices": [
+            345
+          ]
+        },
+        {
+          "name": "Egg Pakora (8 pcs)",
+          "prices": [
+            210
+          ]
+        },
+        {
+          "name": "Chicken Chilli (8pc) (Dry/Gravy)",
+          "prices": [
+            310
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tandoor-non-veg",
+      "title": "TANDOOR NON VEG",
+      "page": 1,
+      "items": [
+        {
+          "name": "Chicken Tikka (6pcs)",
+          "prices": [
+            330
+          ]
+        },
+        {
+          "name": "Chicken Malai Tikka",
+          "prices": [
+            340
+          ]
+        },
+        {
+          "name": "Chicken Hariyali Tikka",
+          "prices": [
+            345
+          ]
+        },
+        {
+          "name": "Chicken Leg Kabab",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Chicken Bharwa Kabab",
+          "prices": [
+            390
+          ]
+        },
+        {
+          "name": "Chicken Resmi Kabab",
+          "prices": [
+            380
+          ]
+        },
+        {
+          "name": "Chicken Stuffed Tandoori",
+          "prices": [
+            649
+          ]
+        },
+        {
+          "name": "Chicken Afgani Kabab",
+          "prices": [
+            380
+          ]
+        },
+        {
+          "name": "Chicken Seek Kabab",
+          "prices": [
+            370
+          ]
+        },
+        {
+          "name": "Chicken Tandoor (F/H)",
+          "prices": [
+            699,
+            399
+          ],
+          "variants": [
+            "F",
+            "H"
+          ]
+        },
+        {
+          "name": "Lemon Chicken",
+          "prices": [
+            390
+          ]
+        },
+        {
+          "name": "Tandoori Pomfret(1pc)",
+          "prices": [
+            555
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noodles-chopsuey",
+      "title": "NOODLES & CHOPSUEY",
+      "page": 2,
+      "items": [
+        {
+          "name": "Vegetable Chowmein",
+          "prices": [
+            180
+          ]
+        },
+        {
+          "name": "Veg Hakka Chowmein",
+          "prices": [
+            180
+          ]
+        },
+        {
+          "name": "Veg Mix Chowmein",
+          "prices": [
+            290
+          ]
+        },
+        {
+          "name": "Paneer Chowmein",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Mushroom Chowmein",
+          "prices": [
+            270
+          ]
+        },
+        {
+          "name": "Veg Chilli Garlic Noodles",
+          "prices": [
+            230
+          ]
+        },
+        {
+          "name": "Veg Schezwan Noodles",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Veg Gravy Chowmein",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Chiness Bhel",
+          "prices": [
+            240
+          ]
+        },
+        {
+          "name": "Veg American Chopsuey",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Veg Chinese Chupsuey",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Egg Chowmein",
+          "prices": [
+            230
+          ]
+        },
+        {
+          "name": "Chicken Chowmein",
+          "prices": [
+            260
+          ]
+        },
+        {
+          "name": "Mix Chowmein (nnon- Veg)",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Chicken Gravy Noodles",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Chicken Schezwan Noodles",
+          "prices": [
+            285
+          ]
+        },
+        {
+          "name": "Chicken Singapuri Noodles",
+          "prices": [
+            270
+          ]
+        },
+        {
+          "name": "Chicken American Choupsuuey",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Chicken Chinese Chousuey",
+          "prices": [
+            280
+          ]
+        }
+      ]
+    },
+    {
+      "id": "veg-starters",
+      "title": "VEG STARTERS",
+      "page": 2,
+      "items": [
+        {
+          "name": "American Corn Salt & Peeper",
+          "prices": [
+            289
+          ]
+        },
+        {
+          "name": "American Corn Saute",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "American Corn Honey Chilli",
+          "prices": [
+            290
+          ]
+        },
+        {
+          "name": "Cheese Ball",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Cheese Pakora",
+          "prices": [
+            260
+          ]
+        },
+        {
+          "name": "Cheese Chilli",
+          "prices": [
+            285
+          ]
+        },
+        {
+          "name": "Veg Manchurian",
+          "prices": [
+            260
+          ]
+        },
+        {
+          "name": "Mushroom Salt & Peeper",
+          "prices": [
+            289
+          ]
+        },
+        {
+          "name": "Classes Mushroom",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Veg Hara Bhara Kabab",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Vegetable Cutlet",
+          "prices": [
+            200
+          ]
+        },
+        {
+          "name": "Vegetable Pakora",
+          "prices": [
+            210
+          ]
+        },
+        {
+          "name": "Veg Lolipop",
+          "prices": [
+            260
+          ]
+        },
+        {
+          "name": "Veg Spring Roll",
+          "prices": [
+            290
+          ]
+        },
+        {
+          "name": "Paneer Drumstick",
+          "prices": [
+            310
+          ]
+        },
+        {
+          "name": "Paneer Manchaska",
+          "prices": [
+            310
+          ]
+        },
+        {
+          "name": "Paneer Cutlet",
+          "prices": [
+            260
+          ]
+        },
+        {
+          "name": "Paneer Pakora",
+          "prices": [
+            240
+          ]
+        },
+        {
+          "name": "Junglee Paneer",
+          "prices": [
+            295
+          ]
+        },
+        {
+          "name": "Chitta Pakora",
+          "prices": [
+            175
+          ]
+        },
+        {
+          "name": "Chana Kurkure",
+          "prices": [
+            175
+          ]
+        },
+        {
+          "name": "Onion Pakora",
+          "prices": [
+            175
+          ]
+        },
+        {
+          "name": "French Fries",
+          "prices": [
+            195
+          ]
+        },
+        {
+          "name": "Peanut Masala",
+          "prices": [
+            175
+          ]
+        },
+        {
+          "name": "Paneer 65",
+          "prices": [
+            295
+          ]
+        },
+        {
+          "name": "Paneer Chilli Dry/gravy",
+          "prices": [
+            295
+          ]
+        },
+        {
+          "name": "Crispy Chilli Baby Corn",
+          "prices": [
+            289
+          ]
+        },
+        {
+          "name": "Crispy Chilli Chana",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Crispy Chili Mushroom",
+          "prices": [
+            295
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roti-naan-kulcha",
+      "title": "ROTI NAAN KULCHA",
+      "page": 3,
+      "items": [
+        {
+          "name": "Tandoori Roti (Plain/Butter)",
+          "prices": [
+            25,
+            35
+          ],
+          "variants": [
+            "Plain",
+            "Butter"
+          ]
+        },
+        {
+          "name": "Tawa Roti (Plain/Butter)",
+          "prices": [
+            25,
+            30
+          ],
+          "variants": [
+            "Plain",
+            "Butter"
+          ]
+        },
+        {
+          "name": "Naan (Plain/ Butter)",
+          "prices": [
+            70,
+            80
+          ],
+          "variants": [
+            "Plain",
+            "Butter"
+          ]
+        },
+        {
+          "name": "Naan ( Masala/garlic/ Shahi)",
+          "prices": [
+            120
+          ]
+        },
+        {
+          "name": "Cheese Naan",
+          "prices": [
+            140
+          ]
+        },
+        {
+          "name": "Kulcha (Plain/ Butter)",
+          "prices": [
+            110
+          ]
+        },
+        {
+          "name": "Onion Kulcha",
+          "prices": [
+            105
+          ]
+        },
+        {
+          "name": "Lachha Paratha",
+          "prices": [
+            75
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dal",
+      "title": "DAL",
+      "page": 3,
+      "items": [
+        {
+          "name": "Plain Dal",
+          "prices": [
+            95
+          ]
+        },
+        {
+          "name": "Dal Tadka (F/H)",
+          "prices": [
+            200,
+            150
+          ],
+          "variants": [
+            "F",
+            "H"
+          ]
+        },
+        {
+          "name": "Yellow Dal Fry",
+          "prices": [
+            180
+          ]
+        },
+        {
+          "name": "Egg Dal Tadka",
+          "prices": [
+            210
+          ]
+        },
+        {
+          "name": "Dal Makhani",
+          "prices": [
+            285
+          ]
+        }
+      ]
+    },
+    {
+      "id": "main-course-vegeterain",
+      "title": "MAIN COURSE VEGETERAIN",
+      "page": 3,
+      "items": [
+        {
+          "name": "Paneer Butter Masala",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Paneer Masala",
+          "prices": [
+            300
+          ]
+        },
+        {
+          "name": "Paneer Tika Butter Masala",
+          "prices": [
+            350
+          ]
+        },
+        {
+          "name": "Panner Do Pyaza",
+          "prices": [
+            310
+          ]
+        },
+        {
+          "name": "Paneer Jhal Fraizi",
+          "prices": [
+            290
+          ]
+        },
+        {
+          "name": "Shahi Paneer",
+          "prices": [
+            350
+          ]
+        },
+        {
+          "name": "Paneer Kolhapuri",
+          "prices": [
+            360
+          ]
+        },
+        {
+          "name": "Paneer Hydrabadi",
+          "prices": [
+            380
+          ]
+        },
+        {
+          "name": "Paneer Mushroom Kolhapuri",
+          "prices": [
+            395
+          ]
+        },
+        {
+          "name": "Matar Paneer",
+          "prices": [
+            310
+          ]
+        },
+        {
+          "name": "Paneer Bhurji",
+          "prices": [
+            300
+          ]
+        },
+        {
+          "name": "Paneer Lawabdar",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Paneer Mushroom Masala",
+          "prices": [
+            340
+          ]
+        },
+        {
+          "name": "Paneer Keema Curry",
+          "prices": [
+            360
+          ]
+        },
+        {
+          "name": "Paneer Kadhai",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Paneer Shimla",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Chana Paneer",
+          "prices": [
+            310
+          ]
+        },
+        {
+          "name": "Palak Paneer",
+          "prices": [
+            340
+          ]
+        },
+        {
+          "name": "Palak Cream",
+          "prices": [
+            345
+          ]
+        },
+        {
+          "name": "Palak Matar",
+          "prices": [
+            270
+          ]
+        },
+        {
+          "name": "Aloo Palak",
+          "prices": [
+            230
+          ]
+        },
+        {
+          "name": "Corn Palak",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Paneer Malai Kofta",
+          "prices": [
+            350
+          ]
+        },
+        {
+          "name": "Paneer Angori Kofta",
+          "prices": [
+            350
+          ]
+        },
+        {
+          "name": "Veg Kofta",
+          "prices": [
+            310
+          ]
+        },
+        {
+          "name": "Veg Angori Kofta",
+          "prices": [
+            275
+          ]
+        },
+        {
+          "name": "Veg Keema Cury",
+          "prices": [
+            290
+          ]
+        },
+        {
+          "name": "Green Peas Curry",
+          "prices": [
+            290
+          ]
+        },
+        {
+          "name": "Green Peas Masala",
+          "prices": [
+            295
+          ]
+        },
+        {
+          "name": "Mix Vegitable",
+          "prices": [
+            220
+          ]
+        },
+        {
+          "name": "Veg Jhal Fraizi",
+          "prices": [
+            285
+          ]
+        },
+        {
+          "name": "Veg Navratan Korma",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Mehti Malai Matar",
+          "prices": [
+            340
+          ]
+        },
+        {
+          "name": "Mushroom Masala",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Mushroom Do Pyaza",
+          "prices": [
+            340
+          ]
+        },
+        {
+          "name": "Mushroom Matar",
+          "prices": [
+            350
+          ]
+        },
+        {
+          "name": "Babycorn Masala",
+          "prices": [
+            345
+          ]
+        },
+        {
+          "name": "Aloo Masala",
+          "prices": [
+            175
+          ]
+        },
+        {
+          "name": "Aloo Matar",
+          "prices": [
+            195
+          ]
+        },
+        {
+          "name": "Aloo Dum",
+          "prices": [
+            210
+          ]
+        },
+        {
+          "name": "Aloo Do Pyaza",
+          "prices": [
+            230
+          ]
+        },
+        {
+          "name": "Aloo (Gobhi/patal)",
+          "prices": [
+            220
+          ]
+        },
+        {
+          "name": "Aloo Bhujiya",
+          "prices": [
+            185
+          ]
+        },
+        {
+          "name": "Bhindi Bhujiya",
+          "prices": [
+            185
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tantoor-veg-starter",
+      "title": "TANTOOR VEG STARTER",
+      "page": 4,
+      "items": [
+        {
+          "name": "Paneer Tikka",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Paneer Malai Tikka",
+          "prices": [
+            350
+          ]
+        },
+        {
+          "name": "Paneer Haryali tikka",
+          "prices": [
+            350
+          ]
+        },
+        {
+          "name": "Panner achari Tikka",
+          "prices": [
+            350
+          ]
+        },
+        {
+          "name": "Mushroom Tikka",
+          "prices": [
+            300
+          ]
+        },
+        {
+          "name": "Potato Tikka",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Vegetable seek Kabab",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Panner seek kabab",
+          "prices": [
+            340
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rice-pulao-biryani",
+      "title": "RICE, PULAO & BIRYANI",
+      "page": 4,
+      "items": [
+        {
+          "name": "Steam Rice",
+          "prices": [
+            99
+          ]
+        },
+        {
+          "name": "Veg Pulao",
+          "prices": [
+            185
+          ]
+        },
+        {
+          "name": "Paneer Pulao",
+          "prices": [
+            240
+          ]
+        },
+        {
+          "name": "Peas pulao",
+          "prices": [
+            210
+          ]
+        },
+        {
+          "name": "Shahi Pulao",
+          "prices": [
+            285
+          ]
+        },
+        {
+          "name": "Veg Biryani",
+          "prices": [
+            230
+          ]
+        },
+        {
+          "name": "Veg Fried Rice",
+          "prices": [
+            220
+          ]
+        },
+        {
+          "name": "Mix Veg Fried Rice",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Jeera Fried Rice",
+          "prices": [
+            210
+          ]
+        },
+        {
+          "name": "Chilli Garlic Fried Rice",
+          "prices": [
+            230
+          ]
+        },
+        {
+          "name": "Ginger Shimla Fried Rice",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Garlic Red Pappar Rice",
+          "prices": [
+            245
+          ]
+        },
+        {
+          "name": "Schezwan Fried Rice",
+          "prices": [
+            255
+          ]
+        },
+        {
+          "name": "Corn Panner Fried Rice",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Veg chow Chow Rice",
+          "prices": [
+            290
+          ]
+        },
+        {
+          "name": "Chicken Schezwan F. rice",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Mix Fried Rice ( Non-Veg)",
+          "prices": [
+            330
+          ]
+        },
+        {
+          "name": "Chicken Biryani",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Mutton Biryani",
+          "prices": [
+            460
+          ]
+        },
+        {
+          "name": "Egg Biryani",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Egg Fried Rice",
+          "prices": [
+            245
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beverage",
+      "title": "BEVERAGE",
+      "page": 5,
+      "items": [
+        {
+          "name": "Tea",
+          "prices": [
+            40
+          ]
+        },
+        {
+          "name": "Coffee",
+          "prices": [
+            60
+          ]
+        },
+        {
+          "name": "Cold Drinks",
+          "prices": [
+            60
+          ]
+        },
+        {
+          "name": "Masala Cold Drinks",
+          "prices": [
+            85
+          ]
+        },
+        {
+          "name": "Fresh Lemon Soda (salt/sugar)",
+          "prices": [
+            85
+          ]
+        },
+        {
+          "name": "Miniral Water",
+          "prices": [
+            20
+          ]
+        },
+        {
+          "name": "Milk",
+          "prices": [
+            60
+          ]
+        },
+        {
+          "name": "Lassi",
+          "prices": [
+            90
+          ]
+        },
+        {
+          "name": "Chaach",
+          "prices": [
+            110
+          ]
+        },
+        {
+          "name": "Blue Lagoon / Mojito",
+          "prices": [
+            150
+          ]
+        },
+        {
+          "name": "Cold Coffee",
+          "prices": [
+            150
+          ]
+        }
+      ]
+    },
+    {
+      "id": "salad-raita",
+      "title": "SALAD & RAITA",
+      "page": 5,
+      "items": [
+        {
+          "name": "Green Salad",
+          "prices": [
+            105
+          ]
+        },
+        {
+          "name": "Cucumber Salad",
+          "prices": [
+            85
+          ]
+        },
+        {
+          "name": "Julienne Salad",
+          "prices": [
+            120
+          ]
+        },
+        {
+          "name": "Onion Salad",
+          "prices": [
+            80
+          ]
+        },
+        {
+          "name": "Fruit Salad",
+          "prices": [
+            255
+          ]
+        },
+        {
+          "name": "Mix Raita",
+          "prices": [
+            165
+          ]
+        },
+        {
+          "name": "Onion Raita",
+          "prices": [
+            150
+          ]
+        },
+        {
+          "name": "Bundi Raita",
+          "prices": [
+            155
+          ]
+        },
+        {
+          "name": "Pineapple Raita",
+          "prices": [
+            250
+          ]
+        },
+        {
+          "name": "Curd",
+          "prices": [
+            80
+          ]
+        }
+      ]
+    },
+    {
+      "id": "break-fast",
+      "title": "BREAK FAST",
+      "page": 5,
+      "items": [
+        {
+          "name": "Toast Butter (4pcs)",
+          "prices": [
+            70
+          ]
+        },
+        {
+          "name": "Vegetable Sandwich",
+          "prices": [
+            125
+          ]
+        },
+        {
+          "name": "Paneer Sandwich",
+          "prices": [
+            145
+          ]
+        },
+        {
+          "name": "Cheese Sandwich",
+          "prices": [
+            155
+          ]
+        },
+        {
+          "name": "Chhola Bhatura",
+          "prices": [
+            150
+          ]
+        },
+        {
+          "name": "Extra Bhatura",
+          "prices": [
+            60
+          ]
+        },
+        {
+          "name": "Paratha (aloo/sattu/ Gobhi)",
+          "prices": [
+            80
+          ]
+        },
+        {
+          "name": "Puri Sabji",
+          "prices": [
+            140
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soup",
+      "title": "SOUP",
+      "page": 5,
+      "items": [
+        {
+          "name": "Vegetable Soup",
+          "prices": [
+            150
+          ]
+        },
+        {
+          "name": "Veg Clear Soup",
+          "prices": [
+            150
+          ]
+        },
+        {
+          "name": "Tomato Soup",
+          "prices": [
+            150
+          ]
+        },
+        {
+          "name": "Veg Sweets Corn Soup",
+          "prices": [
+            150
+          ]
+        },
+        {
+          "name": "Veg Manchow Soup",
+          "prices": [
+            150
+          ]
+        },
+        {
+          "name": "Veg Hot N Sour Soup",
+          "prices": [
+            150
+          ]
+        },
+        {
+          "name": "Veg Noddles Soup",
+          "prices": [
+            150
+          ]
+        },
+        {
+          "name": "Mushroom Soup",
+          "prices": [
+            185
+          ]
+        },
+        {
+          "name": "Chicken Cream Soup",
+          "prices": [
+            185
+          ]
+        },
+        {
+          "name": "Chicken Mushroom Soup",
+          "prices": [
+            185
+          ]
+        },
+        {
+          "name": "Chicken Clear Soup",
+          "prices": [
+            185
+          ]
+        },
+        {
+          "name": "Chicken Sweets Corn Soup",
+          "prices": [
+            185
+          ]
+        },
+        {
+          "name": "Chicken Hot N Sour Soup",
+          "prices": [
+            185
+          ]
+        },
+        {
+          "name": "Chicken Manchow Soup",
+          "prices": [
+            185
+          ]
+        },
+        {
+          "name": "Chicken Noodles Soup",
+          "prices": [
+            185
+          ]
+        },
+        {
+          "name": "Tomato Egg Drop Soup",
+          "prices": [
+            185
+          ]
+        }
+      ]
+    },
+    {
+      "id": "papad",
+      "title": "PAPAD",
+      "page": 5,
+      "items": [
+        {
+          "name": "Papad",
+          "prices": [
+            25
+          ]
+        },
+        {
+          "name": "Papad Fried",
+          "prices": [
+            40
+          ]
+        },
+        {
+          "name": "Masala Papad",
+          "prices": [
+            85
+          ]
+        }
+      ]
+    },
+    {
+      "id": "main-course-non-vegeterian",
+      "title": "MAIN COURSE NON VEGETERIAN",
+      "page": 6,
+      "items": [
+        {
+          "name": "Chicken Curry (4pc)",
+          "prices": [
+            299
+          ]
+        },
+        {
+          "name": "Chicken Kassa",
+          "prices": [
+            330
+          ]
+        },
+        {
+          "name": "Chicken Korma (4pc)",
+          "prices": [
+            365
+          ]
+        },
+        {
+          "name": "Chicken Dehati (F/H)",
+          "prices": [
+            699,
+            399
+          ],
+          "variants": [
+            "F",
+            "H"
+          ]
+        },
+        {
+          "name": "Chicken Murg Masalam (Full)",
+          "prices": [
+            900
+          ]
+        },
+        {
+          "name": "Chicken Masala (4 pc)",
+          "prices": [
+            310
+          ]
+        },
+        {
+          "name": "Chicken Butter Masala (4pc)",
+          "prices": [
+            390
+          ]
+        },
+        {
+          "name": "Chicken Kadhai",
+          "prices": [
+            330
+          ]
+        },
+        {
+          "name": "Chicken Dahi",
+          "prices": [
+            300
+          ]
+        },
+        {
+          "name": "Chicken Bharta",
+          "prices": [
+            320
+          ]
+        },
+        {
+          "name": "Chicken Muglai (4pc)",
+          "prices": [
+            350
+          ]
+        },
+        {
+          "name": "Chicken Do Pyaza",
+          "prices": [
+            350
+          ]
+        },
+        {
+          "name": "Chicken Barrah Kabab B. Masala",
+          "prices": [
+            399
+          ]
+        },
+        {
+          "name": "Chicken Reshmi Kabab B. Masala",
+          "prices": [
+            399
+          ]
+        },
+        {
+          "name": "Chicken Tikka Butter Masala",
+          "prices": [
+            399
+          ]
+        },
+        {
+          "name": "Chicken Leg Kabab B. Masala",
+          "prices": [
+            410
+          ]
+        },
+        {
+          "name": "Chicken Lawabdar",
+          "prices": [
+            380
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mutton",
+      "title": "MUTTON",
+      "page": 6,
+      "items": [
+        {
+          "name": "Mutton Curry (4pc)",
+          "prices": [
+            430
+          ]
+        },
+        {
+          "name": "Mutton Masala",
+          "prices": [
+            450
+          ]
+        },
+        {
+          "name": "Mutton Bhuna (4pc)",
+          "prices": [
+            480
+          ]
+        },
+        {
+          "name": "Handi Mutton (6pcs/3pc) (F/H)",
+          "prices": [
+            620,
+            350
+          ],
+          "variants": [
+            "F",
+            "H"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egg",
+      "title": "EGG",
+      "page": 6,
+      "items": [
+        {
+          "name": "Egg Curry",
+          "prices": [
+            180
+          ]
+        },
+        {
+          "name": "Omelette Curry",
+          "prices": [
+            190
+          ]
+        },
+        {
+          "name": "Egg Masala",
+          "prices": [
+            180
+          ]
+        },
+        {
+          "name": "Egg Do Pyaza",
+          "prices": [
+            200
+          ]
+        },
+        {
+          "name": "Egg Bhurji",
+          "prices": [
+            160
+          ]
+        },
+        {
+          "name": "Omelette",
+          "prices": [
+            80
+          ]
+        },
+        {
+          "name": "Cheese Omelette",
+          "prices": [
+            140
+          ]
+        },
+        {
+          "name": "Masala Omelette",
+          "prices": [
+            140
+          ]
+        },
+        {
+          "name": "Boiled Egg (4pc)",
+          "prices": [
+            120
+          ]
+        },
+        {
+          "name": "Egg Pouch",
+          "prices": [
+            120
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fish",
+      "title": "FISH",
+      "page": 6,
+      "items": [
+        {
+          "name": "Fish Curry (4pcs/2pc) (F/H)",
+          "prices": [
+            230,
+            140
+          ],
+          "variants": [
+            "F",
+            "H"
+          ]
+        },
+        {
+          "name": "Fish Masala (4pc)",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Fish Dahi (4pc)",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Fish Butter Masala (4pc)",
+          "prices": [
+            310
+          ]
+        },
+        {
+          "name": "Fish Do Pyaza",
+          "prices": [
+            280
+          ]
+        },
+        {
+          "name": "Fish Fry (4pcs/2pc) (F/H)",
+          "prices": [
+            210,
+            130
+          ],
+          "variants": [
+            "F",
+            "H"
+          ]
+        }
+      ]
+    }
+  ]
+}
