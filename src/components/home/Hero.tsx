@@ -1,21 +1,14 @@
-import Image from "next/image";
 import { Button } from "@/components/Button";
+import { HeroSlides } from "@/components/home/HeroSlides";
 import { ROUTES } from "@/lib/site";
 
 export function Hero() {
   return (
     <section aria-labelledby="hero-heading" className="on-dark relative isolate flex min-h-[100svh] items-end overflow-hidden bg-forest-950">
-      <Image
-        src="/images/hero/resort-and-hill.webp"
-        alt="Nature View Resort's red-roofed buildings and lawn in front of a rocky green hill under a blue sky"
-        fill
-        priority
-        sizes="100vw"
-        className="animate-drift -z-20 object-cover"
-      />
+      <HeroSlides />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-forest-950/90 via-forest-950/35 to-forest-950/25" aria-hidden="true" />
 
-      <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-32 sm:px-8 sm:pb-24">
+      <div className="mx-auto w-full max-w-7xl px-5 pb-28 pt-32 sm:px-8 sm:pb-24">
         <p className="animate-rise text-xs font-semibold uppercase tracking-[0.28em] text-sand-100">
           Khandoli · Giridih · Jharkhand
         </p>
