@@ -3,3 +3,30 @@ node_modules
 next-env.d.ts
 *.tsbuildinfo
 .env*.local
+
+# Secrets: only .env.example is committed
+.env
+.env.*
+!.env.example
+
+# Original photos and menu PDFs (large, include the payment-QR page and photos awaiting consent). Local only.
+# Leading slash = project root only, so src/app/rooms, src/app/khandoli and public/images/* stay tracked.
+/experiences/
+/food/
+/hero/
+/khandoli/
+/resort/
+/rooms/
+/gallery/
+/views/
+
+# Tooling, hosting and OS junk
+.vercel/
+.claude/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+*.pem
+*.key
+.tmp-*
