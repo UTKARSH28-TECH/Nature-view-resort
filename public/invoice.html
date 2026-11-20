@@ -27,7 +27,10 @@
   .qr-box img{width:100%;height:100%;object-fit:contain}
   .qr-box.filled{border:0}
 
-  .invoice-title{margin:10px 0 12px;text-align:center;border:1px solid var(--line);background:#f7f8f9;padding:6px;font-size:18px;font-weight:700;letter-spacing:1px;color:#34414c}
+  .title-row{display:grid;grid-template-columns:1fr auto;gap:10px;margin:10px 0 12px;align-items:stretch}
+  .invoice-title{text-align:center;border:1px solid var(--line);background:#f7f8f9;padding:6px;font-size:18px;font-weight:700;letter-spacing:1px;color:#34414c}
+  .original{border:1px solid var(--line);padding:9px 12px;font-size:11px;font-weight:700;color:#555;white-space:nowrap;display:flex;align-items:center}
+  .panel h3{font-size:12.5px;margin:2px 0 6px;padding-bottom:5px;border-bottom:1px solid #ddd;color:#555}
 
   .details{display:grid;grid-template-columns:1.1fr 1fr;gap:14px}
   .panel{border:1px solid var(--line);padding:6px 10px}
@@ -143,25 +146,28 @@
   <input type="file" id="qrFile" accept="image/*" hidden>
   <input type="file" id="logoFile" accept="image/*" hidden>
 
-  <div class="invoice-title">TAX INVOICE</div>
+  <div class="title-row"><div class="invoice-title">TAX INVOICE</div><div class="original">Original for Recipient</div></div>
 
   <section class="details">
     <div class="panel">
+      <h3>GUEST DETAILS</h3>
+      <div class="field" data-f="roomNo"><label for="roomNo">Room No:</label><input id="roomNo"></div>
+      <div class="field"><label for="invoiceNo">Invoice No:</label><input id="invoiceNo"></div>
       <div class="field" data-f="guestName"><label for="guestName">Guest Name:</label><input id="guestName" placeholder="Enter guest name"></div>
       <div class="field" data-f="guestAddress"><label for="guestAddress">Address:</label><textarea id="guestAddress" placeholder="Enter guest address"></textarea></div>
       <div class="field" data-f="guestPhone"><label for="guestPhone">Phone:</label><input id="guestPhone" type="tel" placeholder="+91"></div>
-      <div class="field" data-f="guestEmail"><label for="guestEmail">Email:</label><input id="guestEmail" type="email" placeholder="Optional"></div>
-      <div class="field" data-f="companyName"><label for="companyName">Company:</label><input id="companyName" placeholder="Optional"></div>
-      <div class="field" data-f="guestGstin"><label for="guestGstin">Guest GSTIN:</label><input id="guestGstin" placeholder="Optional" maxlength="15"></div>
+      <div class="field" data-f="guestEmail"><label for="guestEmail">Email:</label><input id="guestEmail" type="email" placeholder="guest@example.com"></div>
+      <div class="field" data-f="companyName"><label for="companyName">Company Name:</label><input id="companyName" placeholder="Optional"></div>
+      <div class="field" data-f="guestGstin"><label for="guestGstin">GSTIN (Guest):</label><input id="guestGstin" placeholder="N/A" maxlength="15"></div>
     </div>
     <div class="panel">
-      <div class="field"><label for="invoiceNo">Invoice No:</label><input id="invoiceNo"></div>
+      <h3>STAY DETAILS</h3>
       <div class="field"><label for="invoiceDate">Invoice Date:</label><input type="date" id="invoiceDate"></div>
-      <div class="field" data-f="roomNo"><label for="roomNo">Room No:</label><input id="roomNo"></div>
       <div class="field" data-f="checkIn"><label for="checkIn">Check-in:</label><input type="date" id="checkIn"></div>
       <div class="field" data-f="checkOut"><label for="checkOut">Check-out:</label><input type="date" id="checkOut"></div>
-      <div class="field" data-f="totalDays"><label for="totalDays">Nights:</label><input id="totalDays" readonly></div>
-      <div class="field" data-f="adults children"><label>Guests:</label><div class="pair"><input type="number" id="adults" min="0" placeholder="Adults" title="Adults"><input type="number" id="children" min="0" placeholder="Children" title="Children"></div></div>
+      <div class="field" data-f="totalDays"><label for="totalDays">Total Nights:</label><input id="totalDays" readonly></div>
+      <div class="field"><label>PAX:</label><div class="pair"><input type="number" id="adults" min="0" placeholder="Adults" title="Adults"><input type="number" id="children" min="0" placeholder="Children" title="Children"></div></div>
+      <div class="field"><label for="extraPerson">Extra Person:</label><select id="extraPerson"><option>No</option><option>Yes</option></select></div>
       <div class="field np"><label>Quick fill:</label><button class="secondary" id="fillRoom" type="button" style="padding:5px 10px;font-size:12px">One room line per night</button></div>
     </div>
   </section>
@@ -191,13 +197,8 @@
     </div>
     <div class="totals">
       <div class="total-line"><span>Sub Total:</span><strong>₹<span id="subtotal">0.00</span></strong></div>
-      <div class="total-line" id="rowDiscount"><span>Discount (₹):</span><input class="money-in" type="number" id="discount" min="0" step="0.01" value="0"></div>
-      <div class="total-line" id="rowTaxable"><span>Taxable Value:</span><strong>₹<span id="taxable">0.00</span></strong></div>
-      <div class="total-line np"><span>GST type:</span>
-        <select id="gstMode" style="width:auto"><option value="intra">CGST + SGST (same state)</option><option value="inter">IGST (other state)</option></select></div>
       <div class="total-line" id="rowCgst"><span>CGST (<input class="rate-in" id="cgstRate" type="number" min="0" max="50" step="0.01" value="6">%):</span><strong>₹<span id="cgst">0.00</span></strong></div>
       <div class="total-line" id="rowSgst"><span>SGST (<input class="rate-in" id="sgstRate" type="number" min="0" max="50" step="0.01" value="6">%):</span><strong>₹<span id="sgst">0.00</span></strong></div>
-      <div class="total-line" id="rowIgst" hidden><span>IGST (<input class="rate-in" id="igstRate" type="number" min="0" max="100" step="0.01" value="12">%):</span><strong>₹<span id="igst">0.00</span></strong></div>
       <div class="total-line" id="rowRound"><span>Round Off:</span><strong>₹<span id="roundOff">0.00</span></strong></div>
       <div class="total-line grand"><span>GRAND TOTAL:</span><span>₹<span id="grandTotal">0.00</span></span></div>
       <div class="total-line" id="rowAdvance"><span>Less: Advance:</span><input class="money-in" type="number" id="advance" min="0" step="0.01" value="0"></div>
@@ -238,8 +239,8 @@ const STORE_INV = 'nvr_invoices_v2';
 const STORE_QR = 'nvr_qr_v2';
 const STORE_LOGO = 'nvr_logo_v2';
 const FIELDS = ['roomNo','invoiceNo','guestName','guestAddress','guestPhone','guestEmail','companyName','guestGstin',
-  'invoiceDate','checkIn','checkOut','adults','children','payMode','terms','discount','gstMode',
-  'cgstRate','sgstRate','igstRate','advance'];
+  'invoiceDate','checkIn','checkOut','adults','children','extraPerson','payMode','terms',
+  'cgstRate','sgstRate','advance'];
 
 /* ---------- storage helpers (safe if localStorage is blocked) ---------- */
 function load(key, fallback){ try{ const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }catch(e){ return fallback; } }
@@ -307,27 +308,20 @@ function calculate(){
     // rows with no description and no amount are left off the printout
     r.classList.toggle('row-blank', !r.querySelector('.description').value.trim() && rate === 0);
   });
-  const discount = Math.min(toPaise($('discount').value), sub);
-  const taxable = sub - discount;
-  const inter = $('gstMode').value === 'inter';
   const pct = id => Math.max(0, Number($(id).value) || 0);
-  const cgst = inter ? 0 : Math.round(taxable * pct('cgstRate') / 100);
-  const sgst = inter ? 0 : Math.round(taxable * pct('sgstRate') / 100);
-  const igst = inter ? Math.round(taxable * pct('igstRate') / 100) : 0;
-  const exact = taxable + cgst + sgst + igst;
+  const cgst = Math.round(sub * pct('cgstRate') / 100);
+  const sgst = Math.round(sub * pct('sgstRate') / 100);
+  const exact = sub + cgst + sgst;
   const grand = Math.round(exact / 100) * 100;
   const advance = toPaise($('advance').value);
 
-  $('rowCgst').hidden = inter; $('rowSgst').hidden = inter; $('rowIgst').hidden = !inter;
-  $('subtotal').textContent = fmt(sub); $('taxable').textContent = fmt(taxable);
-  $('cgst').textContent = fmt(cgst); $('sgst').textContent = fmt(sgst); $('igst').textContent = fmt(igst);
+  $('subtotal').textContent = fmt(sub);
+  $('cgst').textContent = fmt(cgst); $('sgst').textContent = fmt(sgst);
   $('roundOff').textContent = fmt(grand - exact); $('grandTotal').textContent = fmt(grand);
   $('balance').textContent = fmt(grand - advance);
   $('amountWords').textContent = amountInWords(grand);
 
   // zero-value lines are hidden from the printout only
-  $('rowDiscount').classList.toggle('hp', discount === 0);
-  $('rowTaxable').classList.toggle('hp', discount === 0);
   $('rowRound').classList.toggle('hp', grand === exact);
   $('rowAdvance').classList.toggle('hp', advance === 0);
   $('rowBalance').classList.toggle('hp', advance === 0);
@@ -389,7 +383,7 @@ function blankInvoice(){
   const d = {
     invoiceNo: nextInvoiceNo(), invoiceDate: isoDate(new Date()), roomNo:'', guestName:'', guestAddress:'', guestPhone:'', guestEmail:'',
     companyName:'', guestGstin:'', checkIn:'', checkOut:'', adults:'', children:'', payMode:'Cash',
-    discount:'0', advance:'0', items:[{}]
+    extraPerson:'No', advance:'0', items:[{}]
   };
   fill(d);
 }
@@ -495,8 +489,7 @@ $('qrFile').addEventListener('change', e => pickImage(e.target, STORE_QR, showQr
 $('logoFile').addEventListener('change', e => pickImage(e.target, STORE_LOGO, showLogo));
 $('checkIn').addEventListener('change', updateNights);
 $('checkOut').addEventListener('change', updateNights);
-['discount','advance','cgstRate','sgstRate','igstRate'].forEach(id => $(id).addEventListener('input', calculate));
-$('gstMode').addEventListener('change', calculate);
+['advance','cgstRate','sgstRate'].forEach(id => $(id).addEventListener('input', calculate));
 document.querySelectorAll('.field[data-f] input,.field[data-f] textarea').forEach(el => el.addEventListener('input', markEmpty));
 
 showQr(load(STORE_QR, null)); showLogo(load(STORE_LOGO, null));
