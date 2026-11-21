@@ -96,22 +96,23 @@
     .saved-row{grid-template-columns:1fr 1fr}
   }
 
-  /* ===== One-page print layout =====
-     The "print-mode" class is switched on just before printing (see script) so the page can be measured
-     and shrunk to fit a single A4 sheet. Empty fields and zero-value rows are dropped from the printout. */
+</style>
+<style id="printStyle" media="print">
+  /* One-page A4 print layout. Blank fields and zero-value lines are dropped from the printout.
+     The sheet is NOT forced to full page height, so it also fits Letter paper; if the content is
+     still too tall the script sets --fit to shrink it (see fitToPage). */
   @page{size:A4;margin:0}
-  @media print{body{background:#fff;padding:0}}
-  body.print-mode{background:#fff;padding:0}
-  .print-mode .toolbar,.print-mode .np,.print-mode .remove-col,.print-mode .add-row-wrap,.print-mode dialog,.print-mode #toast,
-  .print-mode .is-empty,.print-mode .hp,.print-mode .row-blank{display:none!important}
-  .print-mode .invoice{width:210mm;min-height:296mm;margin:0;box-shadow:none;padding:9mm 10mm 8mm}
-  .print-mode input,.print-mode select,.print-mode textarea{border:0!important;background:transparent!important;color:#111!important;appearance:none;-webkit-appearance:none;resize:none;padding-left:0}
-  .print-mode input[type=date]::-webkit-calendar-picker-indicator{display:none}
-  .print-mode .qr-box,.print-mode .logo{cursor:default}
-  .print-mode .qr-box:not(.filled){display:none}
-  .print-mode .panel,.print-mode table,.print-mode .totals{break-inside:avoid}
-  .print-mode thead{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .print-mode .grand{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important;padding:0!important}
+  .toolbar,.np,.remove-col,.add-row-wrap,dialog,#toast,.is-empty,.hp,.row-blank{display:none!important}
+  .invoice{width:210mm!important;min-height:0!important;margin:0!important;box-shadow:none!important;padding:9mm 10mm 8mm!important;zoom:var(--fit,1)}
+  .spacer{flex:none;height:8mm}
+  input,select,textarea{border:0!important;background:transparent!important;color:#111!important;appearance:none;-webkit-appearance:none;resize:none;padding-left:0}
+  input[type=date]::-webkit-calendar-picker-indicator{display:none}
+  .qr-box,.logo{cursor:default}
+  .qr-box:not(.filled){display:none}
+  .details{grid-template-columns:1.1fr 1fr!important}.lower{grid-template-columns:1.15fr .95fr!important}.signatures{grid-template-columns:1fr 1fr!important}
+  .panel,table,.totals,.signatures{break-inside:avoid}
+  thead,.grand{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 </style>
 </head>
 <body>
@@ -157,7 +158,7 @@
       <div class="field" data-f="guestAddress"><label for="guestAddress">Address:</label><textarea id="guestAddress" placeholder="Enter guest address"></textarea></div>
       <div class="field" data-f="guestPhone"><label for="guestPhone">Phone:</label><input id="guestPhone" type="tel" placeholder="+91"></div>
       <div class="field" data-f="guestEmail"><label for="guestEmail">Email:</label><input id="guestEmail" type="email" placeholder="guest@example.com"></div>
-      <div class="field" data-f="companyName"><label for="companyName">Company Name:</label><input id="companyName" placeholder="Optional"></div>
+      <div class="field" data-f="companyName"><label for="companyName">Company:</label><input id="companyName" placeholder="Optional"></div>
       <div class="field" data-f="guestGstin"><label for="guestGstin">GSTIN (Guest):</label><input id="guestGstin" placeholder="N/A" maxlength="15"></div>
     </div>
     <div class="panel">
@@ -455,20 +456,19 @@ function pickImage(fileInput, key, show){
 }
 
 /* ---------- one-page printing ----------
-   Switch to print styling, measure, and shrink the sheet if it would spill onto a 2nd page. */
-function preparePrint(){
-  const inv = $('invoice');
-  document.body.classList.add('print-mode');
+   Print styles live in <style id="printStyle" media="print">. To measure, we briefly apply them to the screen,
+   then restore; if the sheet is taller than ~A4 minus a margin we shrink it with the --fit variable. */
+function fitToPage(){
+  const inv = $('invoice'), ps = $('printStyle');
   calculate();
-  inv.style.zoom = ''; inv.style.minHeight = '0';
-  const pageH = 297 / 25.4 * 96 - 4;            // A4 height in CSS px, minus a small safety margin
+  inv.style.setProperty('--fit', '1');
+  ps.media = 'all';
+  const maxH = 280 / 25.4 * 96;                 // 280mm: fits A4 (297mm) and Letter (279mm with a hair of shrink)
   const h = inv.getBoundingClientRect().height;
-  inv.style.minHeight = '';
-  if(h > pageH) inv.style.zoom = String(pageH / h);
+  ps.media = 'print';
+  inv.style.setProperty('--fit', h > maxH ? String(Math.max(0.5, maxH / h)) : '1');
 }
-function endPrint(){ document.body.classList.remove('print-mode'); $('invoice').style.zoom = ''; }
-window.addEventListener('beforeprint', preparePrint);
-window.addEventListener('afterprint', endPrint);
+window.addEventListener('beforeprint', fitToPage);
 
 /* ---------- wiring ---------- */
 ['btnAdd','btnAdd2'].forEach(id => $(id).addEventListener('click', () => addRow()));
@@ -476,7 +476,7 @@ $('btnNew').addEventListener('click', () => { if(confirm('Start a new invoice? A
 $('btnSave').addEventListener('click', saveInvoice);
 $('btnOpen').addEventListener('click', () => { renderSaved(); $('savedDlg').showModal(); });
 $('btnClose').addEventListener('click', () => $('savedDlg').close());
-$('btnPrint').addEventListener('click', () => window.print());
+$('btnPrint').addEventListener('click', () => { fitToPage(); window.print(); });
 $('btnExport').addEventListener('click', exportBackup);
 $('btnImport').addEventListener('click', () => $('importFile').click());
 $('importFile').addEventListener('change', e => { if(e.target.files[0]) importBackup(e.target.files[0]); e.target.value = ''; });
